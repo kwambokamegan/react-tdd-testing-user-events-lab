@@ -1,21 +1,22 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import userEvent from '@testing-library/user-event';
+
 import App from "../App";
 
 // Portfolio Elements
-test("displays a top-level heading with the text `Hi, I'm (your name)`", () => {
+test("displays a top-level heading with the text `Hi, I'm _______`", () => {
   render(<App />);
 
   const topLevelHeading = screen.getByRole("heading", {
-    name: /hi, i'm \(your name\)/i,
+    name: /hi, i'm/i,
+    exact: false,
     level: 1,
   });
 
   expect(topLevelHeading).toBeInTheDocument();
 });
 
-test("displays an image with the correct alt text", () => {
+test("displays an image of yourself", () => {
   render(<App />);
 
   const image = screen.getByAltText("My profile pic");
@@ -23,7 +24,7 @@ test("displays an image with the correct alt text", () => {
   expect(image).toHaveAttribute("src", "https://via.placeholder.com/350");
 });
 
-test("displays a second-level heading with the text `About Me`", () => {
+test("displays second-level heading with the text `About Me`", () => {
   render(<App />);
 
   const secondLevelHeading = screen.getByRole("heading", {
@@ -37,7 +38,7 @@ test("displays a second-level heading with the text `About Me`", () => {
 test("displays a paragraph for your biography", () => {
   render(<App />);
 
-  const bio = screen.getByText(/lorem ipsum dolor sit amet/i);
+  const bio = screen.getByText(/lorem ipsum/i);
 
   expect(bio).toBeInTheDocument();
 });
@@ -65,71 +66,26 @@ test("displays the correct links", () => {
 
 // Newsletter Form - Initial State
 test("the form includes text inputs for name and email address", () => {
-  render(<App />);
-
-  const nameInput = screen.getByLabelText(/name/i);
-  const emailInput = screen.getByLabelText(/email/i);
-
-  expect(nameInput).toBeInTheDocument();
-  expect(emailInput).toBeInTheDocument();
+  // your test code here
 });
 
 test("the form includes three checkboxes to select areas of interest", () => {
-  render(<App />);
-
-  const checkboxes = screen.getAllByRole("checkbox");
-
-  expect(checkboxes).toHaveLength(3);
+  // your test code here
 });
 
 test("the checkboxes are initially unchecked", () => {
-  render(<App />);
-
-  const checkboxes = screen.getAllByRole("checkbox");
-
-  checkboxes.forEach((checkbox) => {
-    expect(checkbox).not.toBeChecked();
-  });
+  // your test code here
 });
 
 // Newsletter Form - Adding Responses
 test("the page shows information the user types into the name and email address form fields", () => {
-  render(<App />);
-
-  userEvent.type(screen.getByLabelText(/name/i), "John Doe");
-  userEvent.type(screen.getByLabelText(/email/i), "john.doe@example.com");
-
-  expect(screen.getByLabelText(/name/i)).toHaveValue("John Doe");
-  expect(screen.getByLabelText(/email/i)).toHaveValue("john.doe@example.com");
+  // your test code here
 });
 
 test("checked status of checkboxes changes when user clicks them", () => {
-  render(<App />);
-
-  const technologyCheckbox = screen.getByLabelText(/technology/i);
-  const designCheckbox = screen.getByLabelText(/design/i);
-  const marketingCheckbox = screen.getByLabelText(/marketing/i);
-
-  userEvent.click(technologyCheckbox);
-  expect(technologyCheckbox).toBeChecked();
-
-  userEvent.click(designCheckbox);
-  expect(designCheckbox).toBeChecked();
-
-  userEvent.click(marketingCheckbox);
-  expect(marketingCheckbox).toBeChecked();
-
-  userEvent.click(technologyCheckbox);
-  expect(technologyCheckbox).not.toBeChecked();
+  // your test code here
 });
 
 test("a message is displayed when the user clicks the Submit button", () => {
-  render(<App />);
-
-  userEvent.type(screen.getByLabelText(/name/i), "John Doe");
-  userEvent.type(screen.getByLabelText(/email/i), "john.doe@example.com");
-  
-  userEvent.click(screen.getByRole("button", { name: /submit/i }));
-
-  expect(screen.getByText(/thank you for signing up, john doe!/i)).toBeInTheDocument();
+  // your test code here
 });

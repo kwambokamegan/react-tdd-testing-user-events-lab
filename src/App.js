@@ -47,7 +47,7 @@ function App() {
     <div>
       <h1>Hi, I'm (your name)</h1>
       <img
-        src="https://via.placeholder.com/350"
+        src="https://media.istockphoto.com/id/1177615987/photo/happy-fashionable-model-on-white-background.webp?b=1&s=612x612&w=0&k=20&c=qGuQn2Dlo_1msDg4ET4UkFHpNh46r-XgZLIAnFYz0aE="
         alt="My profile pic"
       />
       <h2>About Me</h2>
@@ -55,8 +55,8 @@ function App() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
       <div>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/kwambokamegan" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/jobs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
 
       <form onSubmit={handleSubmit}>
